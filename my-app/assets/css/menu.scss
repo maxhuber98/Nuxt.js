@@ -12,6 +12,7 @@
       flex: 1 33%;
     }
     &--middle {
+      padding-left: 0;
       flex: 1 33%;
     }
     &--right {
@@ -36,4 +37,12 @@
     align-self: center;
     margin: auto auto;
   }
+  &--sticky {
+    position: fixed;
+    transition: top ease-in-out 200ms;
+  }
+}
+
+.padding-top {
+  padding-top: 55px;
 }

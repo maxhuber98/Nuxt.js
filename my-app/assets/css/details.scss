@@ -22,6 +22,7 @@
     background-color: #CFD8DC;
     &--text {
       overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
   &__content {
@@ -30,6 +31,12 @@
     & p {
       text-align: justify;
       margin-bottom: 15px;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+    }
+    @media (min-width: 600px) and (max-width: 992px) {
+      width: 70%;
     }
   }
 }

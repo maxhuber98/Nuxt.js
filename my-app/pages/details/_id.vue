@@ -1,8 +1,9 @@
 <template>
-  <section>
+  <section class="content">
     <div class="post-detail">
       <section class="header">
-        <img src="http://source.unsplash.com/1920x500" class="header__image">
+        <content-loader :unique-key="uniqueKey" :width="1920" :height="500" v-show="!loaded"></content-loader>
+        <img src="http://source.unsplash.com/1920x500" class="header__image" @load="setDone">
       </section>
       <section class="body">
         <h2 class="text-center body__header body__header--text">{{ title }}</h2>
@@ -30,8 +31,25 @@
 <script>
 import AppLogo from '~/components/AppLogo.vue'
 import axios from 'axios'
+import { ContentLoader } from 'vue-content-loader'
 
 export default {
+	components: {
+		ContentLoader
+	},
+	asyncData() {
+		const uid = Math.random()
+			.toString(36)
+			.substring(2)
+		return {
+			uniqueKey: uid
+		}
+	},
+	data() {
+		return {
+			loaded: false
+		}
+	},
 	validate({ params }) {
 		return !isNaN(+params.id)
 	},
@@ -43,6 +61,11 @@ export default {
 			return data
 		} catch (e) {
 			error({ message: 'Post not found.', statusCode: 404 })
+		}
+	},
+	methods: {
+		setDone() {
+			this.loaded = true
 		}
 	}
 }

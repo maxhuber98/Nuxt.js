@@ -51,6 +51,10 @@ module.exports = {
     }
   },
   css: [
-    '@/assets/css/main.scss'
+    '@/assets/css/main.scss',
+    '@/assets/css/transitions.css'
+  ],
+  plugins: [
+    '~/plugins/global.js'
   ]
 }
