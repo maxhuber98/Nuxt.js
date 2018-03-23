@@ -47,7 +47,6 @@ export default {
 		},
 		setDone() {
 			this.loaded = true
-			console.log('test')
 		}
 	}
 }

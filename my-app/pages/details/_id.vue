@@ -2,7 +2,7 @@
   <section class="content">
     <div class="post-detail">
       <section class="header">
-        <content-loader :unique-key="uniqueKey" :width="1920" :height="500" v-show="!loaded"></content-loader>
+        <content-loader :uniqueKey="'id'" :width="1920" :height="500" v-show="!loaded"></content-loader>
         <img src="http://source.unsplash.com/1920x500" class="header__image" @load="setDone">
       </section>
       <section class="body">
@@ -36,14 +36,6 @@ import { ContentLoader } from 'vue-content-loader'
 export default {
 	components: {
 		ContentLoader
-	},
-	asyncData() {
-		const uid = Math.random()
-			.toString(36)
-			.substring(2)
-		return {
-			uniqueKey: uid
-		}
 	},
 	data() {
 		return {
