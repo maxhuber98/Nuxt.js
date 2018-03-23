@@ -1,0 +1,35 @@
+.post-detail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header {
+  flex: 1 100%;
+  margin-bottom: -4px;
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.body {
+  flex: 1 100%;
+  &__header {
+    padding-top: 7px;
+    text-transform: uppercase;
+    height: 50px;
+    background-color: #CFD8DC;
+    &--text {
+      overflow: hidden;
+    }
+  }
+  &__content {
+    width: 60%;
+    margin: 15px auto 0 auto;
+    & p {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+  }
+}
